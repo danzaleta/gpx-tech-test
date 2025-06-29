@@ -1,4 +1,6 @@
-# PRUEBA TÉCNICA
+# PRUEBA TÉCNICA FULL STACK
+
+![image](https://github.com/user-attachments/assets/fbe4a6a0-71b5-45fa-ab13-035af43f58e2)
 
 ## Instrucciones de Instalación y Ejecución
 Sigue estos pasos en orden para levantar el proyecto completo.
