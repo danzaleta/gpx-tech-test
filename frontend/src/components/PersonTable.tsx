@@ -6,9 +6,14 @@ interface Props {
     people: Person[];
     onEdit: (person: Person) => void;
     onDelete: (id: number) => void;
+    isLoading: boolean;
 }
 
-const PersonTable: React.FC<Props> = ({ people, onEdit, onDelete }) => {
+const PersonTable: React.FC<Props> = ({ people, onEdit, onDelete, isLoading }) => {
+    if (isLoading) {
+        return <div>Cargando...</div>;
+    }
+
     return (
         <table>
             <thead>

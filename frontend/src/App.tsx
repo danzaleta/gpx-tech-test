@@ -11,6 +11,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [personToEdit, setPersonToEdit] = useState<Person | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Cargar datos iniciales
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
   const fetchPeople = async () => {
     const data = await personService.getPeople();
     setPeople(data);
+    setIsLoading(false);
   };
 
   // Lógica de filtrado
@@ -81,6 +83,7 @@ function App() {
           people={filteredPeople}
           onEdit={handleOpenForm}
           onDelete={handleDeletePerson}
+          isLoading={isLoading}
         />
 
         {isFormOpen && (
