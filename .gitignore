@@ -1,0 +1,82 @@
+# ########################################################################
+# ## Archivo .gitignore para un proyecto Fullstack (Node.js + React)   ##
+# ########################################################################
+
+# --- Dependencias y Logs ---
+# Ignora los directorios de paquetes, que pueden ser recreados con 'npm install'
+# El patrón **/ se asegura de que encuentre 'node_modules' en cualquier subdirectorio (ej. /frontend/node_modules)
+**/node_modules/
+
+# Archivos de log generados por NPM
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Entorno y Secretos ---
+# Ignora los archivos de variables de entorno. Son específicos de cada máquina y contienen secretos.
+# Es buena práctica crear un archivo '.env.example' con las variables requeridas y subirlo al repositorio.
+.env
+.env.*
+!.env.example
+!.env.test
+
+# --- Backend (Node.js / Express / Prisma) ---
+# Archivos de entorno específicos del backend
+backend/.env
+backend/.env.local
+
+# Prisma
+# Si usas una base de datos local como SQLite con Prisma, descomenta la siguiente línea
+# *.db
+# *.db-journal
+
+# --- Frontend (Create React App) ---
+# Archivos de entorno específicos del frontend
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Carpeta de producción generada por 'npm run build'
+**/build/
+
+# Reportes de cobertura de tests
+**/coverage/
+
+# --- TypeScript ---
+# Archivos de caché o de declaración generados durante la compilación
+*.tsbuildinfo
+
+# --- Archivos del Sistema Operativo ---
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+*.lnk
+
+# --- Archivos de Editores e IDEs ---
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains (WebStorm, IntelliJ)
+.idea/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# --- Archivos de Debug y Logs Generales ---
+logs
+*.log
+.npm/
