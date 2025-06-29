@@ -1,4 +1,3 @@
-// src/components/PersonTable.tsx
 import React from 'react';
 import { Person } from '../types/person';
 

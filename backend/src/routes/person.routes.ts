@@ -1,4 +1,3 @@
-// src/routes/person.routes.ts
 import { Router } from 'express';
 import { getPeople, createPerson, updatePerson, deletePerson } from '../controllers/person.controller';
 

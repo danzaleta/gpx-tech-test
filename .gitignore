@@ -6,6 +6,8 @@
 # Ignora los directorios de paquetes, que pueden ser recreados con 'npm install'
 # El patrón **/ se asegura de que encuentre 'node_modules' en cualquier subdirectorio (ej. /frontend/node_modules)
 **/node_modules/
+frontend/node_modules
+backend/node_modules
 
 # Archivos de log generados por NPM
 npm-debug.log*

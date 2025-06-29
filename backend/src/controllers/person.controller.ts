@@ -1,10 +1,8 @@
-// src/controllers/person.controller.ts
-import { Request, Response, NextFunction } from 'express';
-import { PrismaClient } from '../generated/prisma';
+import { Request, Response } from 'express';
+import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-// Obtener todas las personas
 export const getPeople = async (req: Request, res: Response) => {
     try {
         const people = await prisma.person.findMany();
@@ -34,7 +32,6 @@ export const updatePerson = async (req: Request, res: Response) => {
         });
         res.json(updatedPerson);
     } catch (error) {
-        // Prisma arroja un error específico si no encuentra el registro a actualizar
         res.status(404).json({ message: 'Persona no encontrada o error al actualizar', error });
     }
 };
@@ -45,9 +42,8 @@ export const deletePerson = async (req: Request, res: Response) => {
         await prisma.person.delete({
             where: { id: parseInt(id) },
         });
-        res.status(204).send(); // 204 No Content
+        res.status(204).send();
     } catch (error) {
-        // Prisma arroja un error específico si no encuentra el registro a eliminar
         res.status(404).json({ message: 'Persona no encontrada o error al eliminar', error });
     }
 };

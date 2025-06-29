@@ -1,6 +1,5 @@
-// src/types/person.ts
 export interface Person {
-    id?: number; // El ID es opcional porque al crear una nueva persona, no lo tendremos aún.
+    id?: number;
     nombres: string;
     apellidoPaterno: string;
     apellidoMaterno: string;

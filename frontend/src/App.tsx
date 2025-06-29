@@ -1,6 +1,5 @@
-// src/App.tsx
 import React, { useState, useEffect, useMemo } from 'react';
-import './App.css'; // Añadiremos estilos básicos aquí
+import './App.css';
 import { Person } from './types/person';
 import * as personService from './services/personService';
 import PersonTable from './components/PersonTable';
@@ -13,7 +12,6 @@ function App() {
   const [personToEdit, setPersonToEdit] = useState<Person | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Cargar datos iniciales
   useEffect(() => {
     fetchPeople();
   }, []);
@@ -24,7 +22,6 @@ function App() {
     setIsLoading(false);
   };
 
-  // Lógica de filtrado
   const filteredPeople = useMemo(() =>
     people.filter(person =>
       person.nombres.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -45,20 +42,18 @@ function App() {
 
   const handleSavePerson = async (person: Person) => {
     if (person.id) {
-      // Actualizar
       await personService.updatePerson(person.id, person);
     } else {
-      // Crear
       await personService.createPerson(person);
     }
-    fetchPeople(); // Recargar la lista
+    fetchPeople();
     handleCloseForm();
   };
 
   const handleDeletePerson = async (id: number) => {
     if (window.confirm('¿Estás seguro de que deseas eliminar a esta persona?')) {
       await personService.deletePerson(id);
-      fetchPeople(); // Recargar la lista
+      fetchPeople();
     }
   };
 

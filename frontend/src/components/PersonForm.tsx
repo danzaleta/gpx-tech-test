@@ -1,4 +1,3 @@
-// src/components/PersonForm.tsx
 import React, { useState, useEffect } from 'react';
 import { Person } from '../types/person';
 

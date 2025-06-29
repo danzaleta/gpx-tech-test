@@ -1,4 +1,3 @@
-// src/services/personService.ts
 import axios from 'axios';
 import { Person } from '../types/person';
 
